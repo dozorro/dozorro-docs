@@ -332,7 +332,7 @@ raw = json.dumps(data,
 
 sk = ed25519.SigningKey(keydata)
 
-data['sign'] = sk.sign(data_bin, encoding='base64')
+data['sign'] = sk.sign(raw, encoding='base64')
 
 ```
 
