@@ -236,7 +236,7 @@
 <ol>
 <li>Для розрахунку беруться значення <em>envelope</em> тобто 2 байти <code>{}</code></li>
 <li><code>sha256( sha256('{}').raw() ).hex() = c74f3008 fdd2f7c5 ae5446ab 2e522629 f63346f6 8a4026b4 f72b91b3 93475ff6</code></li>
-<li>Для ID використовуємо перші 32 символи hex кодування.</li>
+<li>Для ID використовуємо перші 32 символи хешу в hex кодуванні.</li>
 </ol>
 <p><strong>За допомогою python</strong></p>
 <pre><code class="language-python"><span class="hljs-keyword">import</span> json
@@ -314,7 +314,7 @@ raw = json.dumps(data,
 
 sk = ed25519.SigningKey(keydata)
 
-data[<span class="hljs-string">'sign'</span>] = sk.sign(data_bin, encoding=<span class="hljs-string">'base64'</span>)
+data[<span class="hljs-string">'sign'</span>] = sk.sign(raw, encoding=<span class="hljs-string">'base64'</span>)
 
 </code></pre>
 <p><strong>На PHP</strong></p>
