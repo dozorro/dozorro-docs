@@ -255,8 +255,8 @@ data[<span class="hljs-string">'id'</span>] = h2[:<span class="hljs-number">32</
 <p><strong>На PHP</strong></p>
 <pre><code class="language-php"><span class="hljs-variable">$sorted_env</span> = recursive_ksort(<span class="hljs-variable">$data</span>[<span class="hljs-string">'envelope'</span>]);  <span class="hljs-comment">// implement this</span>
 <span class="hljs-variable">$raw</span> = json_encode(<span class="hljs-variable">$sorted_env</span>);
-<span class="hljs-variable">$h1</span> = hash(<span class="hljs-string">'sha256'</span>, <span class="hljs-variable">$raw</span>, <span class="hljs-keyword">true</span>);
-<span class="hljs-variable">$h2</span> = hash(<span class="hljs-string">'sha256'</span>, <span class="hljs-variable">$h1</span>);
+<span class="hljs-variable">$h1</span> = hash(<span class="hljs-string">'sha256'</span>, <span class="hljs-variable">$raw</span>, <span class="hljs-keyword">true</span>);                  <span class="hljs-comment">// $raw_output = true</span>
+<span class="hljs-variable">$h2</span> = hash(<span class="hljs-string">'sha256'</span>, <span class="hljs-variable">$h1</span>);                         <span class="hljs-comment">// hex output</span>
 <span class="hljs-variable">$data</span>[<span class="hljs-string">'id'</span>] = substr(<span class="hljs-variable">$h2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">32</span>);
 </code></pre>
 <p>Далі наведено декілька типових помилок:</p>
