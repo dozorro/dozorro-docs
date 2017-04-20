@@ -257,7 +257,7 @@ data['id'] = h2[:32]
 ```php
 $sorted_env = recursive_ksort($data['envelope']);  // implement this
 $raw = json_encode($sorted_env);
-$h1 = hash('sha256', $data, true);
+$h1 = hash('sha256', $raw, true);
 $h2 = hash('sha256', $h1);
 $data['id'] = substr($h2, 0, 32);
 ```
